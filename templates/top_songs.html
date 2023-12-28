@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Songs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            background:linear-gradient(to right, #36454f,#101314 , #101314);
+            margin: 0;
+            padding: var(--pad) 0;
+            font-family: "Open Sans", sans-serif;
+            
+        }
+    h1{
+        font-size: 30px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      h2{
+        font-size: 25px;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 300;
+        text-align: left;
+        margin-bottom: 15px;
+      }
+      h4 {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+    }
+    a{
+      font-size: 25px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 300;
+      text-align: left;
+      margin-bottom: 15px;
+      text-decoration: none;
+    }
+  
+    
+    /* Remove underline only when hovered */
+    a:hover {
+      text-decoration: none;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+    }
+    
+    /* Remove underline only when visited */
+    a:visited {
+      text-decoration: none;
+    }
+    
+    
+      table{
+        width:100%;
+        table-layout: fixed;
+        border: none;
+      }
+      .tbl-header{
+        background-color: rgba(255,255,255,0.04);
+    
+       }
+      .tbl-content{
+        height:490px;
+        overflow-x:auto;
+        margin-top: 0px;
+      }
+      th{
+        padding: 20px 15px;
+        text-align: left;
+        font-weight: 1000;
+        font-size: 20px;
+        color: #fff;
+        text-transform: uppercase;
+    
+        border: solid 1px rgba(255,255,255,0.1);
+       
+      }
+      td{
+        padding: 15px;
+        text-align: left;
+        vertical-align:middle;
+        font-weight: 500;
+        font-size: 18px;
+        color: #fff;
+        border-bottom: solid 1px rgba(255,255,255,0.1);
+        
+      }
+      section{
+        margin: 150px;
+      }
+      
+      ::-webkit-scrollbar {
+          width: 6px;
+      } 
+      ::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+      } 
+      ::-webkit-scrollbar-thumb {
+          -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+      }
+      #fixedSection {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 200px; /* Adjust the width as needed */
+        border-right: solid 1px rgba(255,255,255,0.1);
+        padding: 20px;
+      }
+      #content {
+        margin-left: 220px; /* Adjust the margin to accommodate the fixed section width */
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      img {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100px;
+        width: 333px;
+        margin: 20px; /* Adjust margin as needed */
+        opacity: 0.1;
+    }
+    
+    </style>
+</head>
+<body>
+    <div id="fixedSection">
+      <a href="{{ url_for('index') }}"><H2><p>STACK MUSIC AI</p></h2></a>
+      </div>
+     <div id="content">
+     <div style="position: absolute; top: 10px; right: 10px; color: white;">
+        ID: {{ user_id }}
+    </div>
+       <center> <h1>Top 100 Global Hits</h1></center>
+       <div class="tbl-header">
+     
+        <table border="1" cellpadding="0" cellspacing="0" border="0">
+           <thead>
+            <tr>
+                
+                <th>Title</th>
+                <th>Release</th>
+                <th>Artist Name</th>
+                
+            </tr>
+        </thead></table>
+    </div>
+    <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+            
+           
+            {% for song in data['data'] %}
+            
+           <tr>
+                   <td> {{ song['title'] }} </td>
+                    <td>{{ song['release'] }} </td>
+                 <td> {{ song['artist_name'] }} </td>
+           </tr>
+                
+            {% endfor %}
+        
+                </tbody>
+         </table>
+            
+        <img src="{{ url_for('static', filename='UoA_Primary_Logo_REVERSE_2018.png') }}" alt="Image">
+    </div>
+</div>
+                
+<script>
+
+    $(window).on("load resize ", function() {
+        var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+        $('.tbl-header').css({'padding-right':scrollWidth});
+      }).resize();
+</script>
+   
+</body>
+</html>

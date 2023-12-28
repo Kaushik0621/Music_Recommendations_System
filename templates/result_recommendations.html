@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System - Result (Recommendations)</title>
+    <!-- Add your stylesheets and scripts here if needed -->
+</head>
+<body>
+    <h1>Recommendations for User ID {{ user_id }}:</h1>
+
+    <h2>Recommendations based on Cosine Similarity:</h2>
+    <ul>
+        {% for song in recommendations.recommendations %}
+            <li>{{ song.title }} by {{ song.artist_name }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Add any additional content or scripts here -->
+
+</body>
+</html>

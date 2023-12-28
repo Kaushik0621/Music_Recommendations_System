@@ -1,0 +1,158 @@
+.scene {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: #0f0f13;
+    width: 100%;
+    height: 100%;
+}
+.scene li {
+    /*top: 50% !important;
+    left: 50% !important;*/
+}
+
+.layer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.layer .imatge {
+    /*
+    height: 2000px;
+    width: 4000px;
+    top: -1000px;
+    left: -2000px;
+    
+    position: absolute;
+    */
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    
+    animation-timing-function: cubic-bezier(0.250, 0.250, 0.750, 0.750);
+    animation-name: float;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(100%, 100%);
+    }
+}
+
+
+.layer img {
+    width: 100%;
+}
+
+
+/* DUST DELANTE */
+
+#img-1 {
+    opacity: 0.8;
+    background: url('../../assets/home/header/dust-delante.png');
+    background-repeat: repeat;
+    animation-duration: 330s;
+    -webkit-animation-direction: normal; /* Chrome, Safari, Opera */
+    animation-direction: normal;
+}
+
+
+/* DUST MEDIO */
+
+#img-2 {
+    opacity: 1;
+    background: url('../../assets/home/header/dust-medio.png');
+    background-repeat: repeat;
+    animation-duration: 555s;
+    -webkit-animation-direction: normal; /* Chrome, Safari, Opera */
+    animation-direction: normal;
+}
+
+
+/* FONDO NEGRO ESTRELLAS GRISES */
+
+#img-3 {
+    opacity: 1;
+    background: url('../../assets/home/header/bg-dust.png');
+    background-repeat: repeat;
+    /*animation-duration: 800s;*/
+    -webkit-animation:  800s ease-in-out infinite;
+    -webkit-animation-direction: normal; /* Chrome, Safari, Opera */
+    animation-direction: normal;
+}
+
+
+
+/* AZUL */
+
+.color1 {
+    -webkit-animation: color1 10s ease-in-out infinite;
+}
+
+@keyframes color1 {
+    0% {
+        -webkit-transform: rotate(0) translateY(0);
+    }
+    25% {
+        -webkit-transform: rotate(-3deg) translateY(-25px) translateX(-25px);
+    }
+    50% {
+        -webkit-transform: rotate(-3deg) translateY(-50px) translateX(-60px);
+    }
+    75% {
+        -webkit-transform: rotate(-3deg) translateY(-25px) translateX(-25px);
+    }
+    100% {
+        -webkit-transform: rotate(0) translateY(0);
+    }
+}
+
+
+/* LILA */
+.colors{
+    left:50% !important;
+    top:50% !important;
+}
+.color2 {
+    -webkit-animation: color2 18s ease-in-out infinite;
+}
+
+@keyframes color2 {
+    50% {
+        -webkit-transform: rotate(8deg) scale(0.7) translateY(30px) translateX(60px);
+    }
+}
+
+
+/* ROJO */
+
+.color3 {
+    -webkit-animation: color3 6s ease-in-out infinite;
+}
+
+@keyframes color3 {
+    50% {
+        -webkit-transform: rotate(-20deg) translateY(-30px) translateX(45px);
+    }
+}
+
+
+/* VERDE */
+
+.color4 {
+    -webkit-animation: color4 12s ease-in-out infinite;
+}
+
+@keyframes color4 {
+    50% {
+        -webkit-transform: rotate(8deg) scale(1.2) translateY(10px) translateX(-10px);
+    }
+}

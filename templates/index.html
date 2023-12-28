@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User ID Input</title>
+    <script>
+        function toggleInputMethod() {
+            var manualInput = document.getElementById('manualInput');
+            var dropdownInput = document.getElementById('dropdownInput');
+            var selectedMethod = document.querySelector('input[name="inputMethod"]:checked').value;
+
+            if (selectedMethod === 'manual') {
+                manualInput.style.display = 'block';
+                dropdownInput.style.display = 'none';
+            } else {
+                manualInput.style.display = 'none';
+                dropdownInput.style.display = 'block';
+            }
+        }
+    </script>
+    <style>
+      html {
+          height: 100%;
+        }
+        body {
+          margin:0;
+          padding:0;
+          font-family: sans-serif;
+          background:linear-gradient(to right, #36454f,  #101314);
+        }
+        
+      img {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        height: 100px;
+        width: 333px;
+
+        opacity: 0.1;
+        margin: 20px; /* Adjust margin as needed */
+    }
+        h1{
+          font-size: 40px;
+          color: #fff;
+          text-transform: uppercase;
+          font-weight: 600;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+        
+        .login-box {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 550px;
+          padding: 40px;
+          transform: translate(-50%, -50%);
+          background: rgba(0,0,0,.5);
+          box-sizing: border-box;
+          box-shadow: 0 15px 25px rgba(0,0,0,.6);
+          border-radius: 10px;
+        }
+        
+        .login-box h2 {
+          margin: 0 0 30px;
+          padding: 0;
+          color: #fff;
+          text-align: center;
+        }
+        .login-box  h1{
+          fmargin: 0 0 30px;
+          padding: 0;
+          color: #fff;
+          text-align: center;
+        }
+        
+        .login-box .user-box {
+          position: relative;
+        }
+        
+        .login-box .user-box input, 
+        .login-box .user-box select {
+          width: 100%;
+          padding: 10px 0;
+          font-size: 16px;
+          color: #fff;
+          margin-bottom: 30px;
+          border: none;
+          border-bottom: 1px solid #fff;
+          outline: none;
+          background: transparent;
+        }
+
+
+      
+        
+        .login-box .user-box label {
+          position: absolute;
+          top:0;
+          left: 0;
+          padding: 10px 0;
+          font-size: 16px;
+          color: #fff;
+          pointer-events: none;
+          transition: .5s;
+        }
+        
+        .login-box .user-box input:focus ~ label,
+        .login-box .user-box input:valid ~ label {
+          top: -20px;
+          left: 0;
+          color: #03e9f4;
+          font-size: 12px;
+        }
+        
+        .login-box form button {
+          position: relative;
+          display: inline-block;
+          padding: 10px 20px;
+          color: black;
+          font-size: 16px;
+          display: block;
+          margin: 10px auto;
+          text-decoration: none;
+          text-transform: uppercase;
+          overflow: hidden;
+          transition: .5s;
+          margin-top: 40px;
+          letter-spacing: 4px
+        }
+        
+        .login-box button:hover {
+          background: #03e9f4;
+          color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 0 5px #03e9f4,
+                      0 0 25px #03e9f4,
+                      0 0 50px #03e9f4,
+                      0 0 100px #03e9f4;
+        }
+        
+        .login-box button span {
+          position: absolute;
+          display: block;
+        }
+        
+        .login-box button span:nth-child(1) {
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, transparent, #03e9f4);
+          animation: btn-anim1 1s linear infinite;
+        }
+        
+        @keyframes btn-anim1 {
+          0% {
+            left: -100%;
+          }
+          50%,100% {
+            left: 100%;
+          }
+        }
+        
+        .login-box button span:nth-child(2) {
+          top: -100%;
+          right: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(180deg, transparent, #03e9f4);
+          animation: btn-anim2 1s linear infinite;
+          animation-delay: .25s
+        }
+        
+        @keyframes btn-anim2 {
+          0% {
+            top: -100%;
+          }
+          50%,100% {
+            top: 100%;
+          }
+        }
+        
+        .login-box button span:nth-child(3) {
+          bottom: 0;
+          right: -100%;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(270deg, transparent, #03e9f4);
+          animation: btn-anim3 1s linear infinite;
+          animation-delay: .5s
+        }
+        
+        @keyframes btn-anim3 {
+          0% {
+            right: -100%;
+          }
+          50%,100% {
+            right: 100%;
+          }
+        }
+        
+        .login-box button span:nth-child(4) {
+          bottom: -100%;
+          left: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(360deg, transparent, #03e9f4);
+          animation: btn-anim4 1s linear infinite;
+          animation-delay: .75s
+        }
+        
+        @keyframes btn-anim4 {
+          0% {
+            bottom: -100%;
+          }
+          50%,100% {
+            bottom: 100%;
+          }
+        }
+        
+    
+  </style>
+
+
+
+
+
+
+</head>
+<body>
+  <h1> Stack Music AI </h1>
+  {% if user_not_found %}
+    <p>User not found. Please check the entered user ID.</p>
+{% endif %}
+ 
+  <div class="login-box">
+  <h1>Music Recommendation</h1>
+  
+    <form action="/" method="post">
+     <h2>
+        <input type="radio" name="inputMethod" value="manual" onclick="toggleInputMethod()" checked> Manual Input
+        <input type="radio" name="inputMethod" value="dropdown" onclick="toggleInputMethod()">Select from Dropdown</h2>
+        <div class="user-box">
+        <div id="manualInput">
+            <input type="text" id="user_id" name="user_id" placeholder="Enter User ID manually">
+        </div></div>
+        <div class="user-box">
+
+        <div id="dropdownInput" style="display: none;">
+            <label for="user_id_dropdown"></label>
+            <select id="user_id_dropdown" name="user_id_dropdown">
+              <option value="" selected disabled>Select an option</option>
+                <option value="b80344d063b5ccb3212f76538f3d9e43d87dca9e">b80344d063b5ccb3212f76538f3d9e43d87dca9e</option>
+                <option value="3887c145fb91a26b3ce9c80903231539411c601e">3887c145fb91a26b3ce9c80903231539411c601e</option>
+                <option value="01388705af361a3ded407ef2aa51fde175a73f64">01388705af361a3ded407ef2aa51fde175a73f64</option>
+                <option value="0b9a6a7975b818259222ae7434a1095834d25b92">0b9a6a7975b818259222ae7434a1095834d25b92</option>
+                <option value="8bde0ae3eda6b6f26c8a91eb5750d416acb3d508">8bde0ae3eda6b6f26c8a91eb5750d416acb3d508</option>
+                <option value="a1f9bcb45862617be929b14b2f419e49939fb674">a1f9bcb45862617be929b14b2f419e49939fb674</option>
+                <option value="c5f40b021c8c4c3964c042880c1c4304a1a6e2d1">c5f40b021c8c4c3964c042880c1c4304a1a6e2d1</option>
+                <option value="d2f7afe12fbd26fc2bed0039740fc6af579920c0">d2f7afe12fbd26fc2bed0039740fc6af579920c0</option>
+                <option value="ebf60883ab4418a8506aa6d6bd08c68f3c88dd47">ebf60883ab4418a8506aa6d6bd08c68f3c88dd47</option>
+                <option value="ff3a54c32ae353b78711f74251eee8611f5dfd12">ff3a54c32ae353b78711f74251eee8611f5dfd12</option>
+                <option value="fbcc9c5c37e7b51b5315a7fefe765bb9bbe12c30">fbcc9c5c37e7b51b5315a7fefe765bb9bbe12c30</option>
+                <option value="e39c7a2722b761784646b4d4af98853a1b50f076">e39c7a2722b761784646b4d4af98853a1b50f076</option>
+                <option value="d2f7afe12fbd26fc2bed0039740fc6af579920c0">d2f7afe12fbd26fc2bed0039740fc6af579920c0</option>
+                <option value="cedacf9603a3c6c4cd1fd869b4572232664a1fb2">cedacf9603a3c6c4cd1fd869b4572232664a1fb2</option>
+                <option value="ba4ee5987d1bfb288926f74d9fecb60385b43860">ba4ee5987d1bfb288926f74d9fecb60385b43860</option>
+                <option value="af8ba2917f53e92dd3a60f2957e972f6603ce985">af8ba2917f53e92dd3a60f2957e972f6603ce985</option>
+                <option value="ae0565253d822cdc47c645a1b29cb6a5e2e2ab16">ae0565253d822cdc47c645a1b29cb6a5e2e2ab16</option>
+                <option value="994a12b00f2927b5dc25952f1afc31a21ef964cc">994a12b00f2927b5dc25952f1afc31a21ef964cc</option>
+                <option value="8e62bd92df8077380f0aa59d800b32ae930698e5">8e62bd92df8077380f0aa59d800b32ae930698e5</option>
+                <option value="5d5292006ba24728132385c17927c3ac00225498">5d5292006ba24728132385c17927c3ac00225498</option>
+               
+            </select>
+        </div>
+      </div>
+
+        <button type="submit" onclick="toggleInputMethod()">
+          <span></span>
+            <span></span>
+            <span></span>
+            <span></span>Submit</button>
+    </form>
+  </div>
+  <img src="{{ url_for('static', filename='UoA_Primary_Logo_REVERSE_2018.png') }}" alt="Image">
+  
+
+</body>
+</html>

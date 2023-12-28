@@ -1,0 +1,60 @@
+{
+  "song": "SOKNWRZ12A8C13BF62",
+  "title": "Natural Anthem (Album)",
+  "play_count": 31,
+  "release": "Give Up",
+  "artist_name": "Postal Service",
+  "song_era": 2000,
+  "data": [
+    {
+      "index": 31782,
+      "song": "SOSFFJR12A6D4F854F",
+      "play_count": 2,
+      "title": "Natural",
+      "release": "Raro",
+      "artist_name": "El Cuarteto De Nos",
+      "song_era": 2005,
+      "cosine_similarity": 0.7
+    },
+    {
+      "index": 392,
+      "song": "SOAFKAJ12AB0181B91",
+      "play_count": 22,
+      "title": "Natural's Not In It",
+      "release": "Gang of Four Hit Pac - 5 Series",
+      "artist_name": "Gang Of Four",
+      "song_era": 1975,
+      "cosine_similarity": 0.7
+    },
+    {
+      "index": 8262,
+      "song": "SOEOWNS12A6701ED15",
+      "play_count": 2,
+      "title": "Natural",
+      "release": "Best - The Greatest Hits",
+      "artist_name": "S Club 7",
+      "song_era": 2000,
+      "cosine_similarity": 0.7
+    },
+    {
+      "index": 9798,
+      "song": "SOFMFLK12A58A7EB38",
+      "play_count": 1,
+      "title": "Anthem (We Are The Fire) (Album Version)",
+      "release": "The Crusade",
+      "artist_name": "Trivium",
+      "song_era": 2005,
+      "cosine_similarity": 0.671
+    },
+    {
+      "index": 40243,
+      "song": "SOXIXRI12AB017F1A7",
+      "play_count": 9,
+      "title": "The Anthem",
+      "release": "Greatest Remixes",
+      "artist_name": "Good Charlotte",
+      "song_era": 2000,
+      "cosine_similarity": 0.655
+    }
+  ]
+}

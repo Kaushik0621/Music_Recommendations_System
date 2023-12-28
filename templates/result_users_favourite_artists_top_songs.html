@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System - Result (Users' Favorite Artists Top Songs)</title>
+    <!-- Add your stylesheets and scripts here if needed -->
+</head>
+<body>
+    <h1>Recommendations for User ID {{ user_id }}:</h1>
+
+    <h2>Top Songs from User's Favorite Artists:</h2>
+    {% for artist, songs in recommendations.users_favourite_artists_top_songs.items() %}
+        <h3>{{ artist }}</h3>
+        <ul>
+            {% for song in songs %}
+                <li>{{ song.title }} in {{ song.album }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <!-- Add any additional content or scripts here -->
+
+</body>
+</html>

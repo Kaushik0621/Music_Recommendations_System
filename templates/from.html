@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Style for the fixed section */
+    #fixedSection {
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 200px; /* Adjust the width as needed */
+      background-color: #f1f1f1; /* Set your desired background color */
+      padding: 20px;
+      border-right: 2px solid #ccc; /* Add a border to the right side */
+    }
+
+    /* Style for the items in the fixed section */
+    #fixedSection p {
+      margin: 0;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Style for the selected item */
+    #fixedSection p.selected {
+      background-color: #333;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* Hover effect for the items */
+    #fixedSection p:hover {
+      background-color: #ddd;
+      color: #333;
+    }
+
+    /* Style for the content area to prevent it from overlapping with the fixed section */
+    #content {
+      margin-left: 220px; /* Adjust the margin to accommodate the fixed section width */
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Section -->
+  <div id="fixedSection">
+    <!-- Items for the fixed section with onclick events -->
+    <p onclick="changeContent('item1')">Item 1</p>
+    <p onclick="changeContent('item2')">Item 2</p>
+    <p onclick="changeContent('item3')">Item 3</p>
+  </div>
+
+  <!-- Content Area -->
+  <div id="content">
+    <!-- Initial content for Item 1 -->
+    <p>Content for Item 1</p>
+  </div>
+
+  <!-- JavaScript to change content and update selected item -->
+  <script>
+    function changeContent(item) {
+      var contentArea = document.getElementById('content');
+      var selectedItems = document.querySelectorAll('#fixedSection p');
+
+      // Change content based on the clicked item
+      switch(item) {
+        case 'item1':
+          contentArea.innerHTML = '<p>Content for Item 1</p>';
+          break;
+        case 'item2':
+          contentArea.innerHTML = '<p>Content for Item 2</p>';
+          break;
+        case 'item3':
+          contentArea.innerHTML = '<p>Content for Item 3</p>';
+          break;
+        default:
+          contentArea.innerHTML = '';
+      }
+
+      // Remove 'selected' class from all items
+      selectedItems.forEach(function(itemElement) {
+        itemElement.classList.remove('selected');
+      });
+
+      // Add 'selected' class to the clicked item
+      document.querySelector('#fixedSection p[data-item="' + item + '"]').classList.add('selected');
+    }
+  </script>
+
+</body>
+</html>

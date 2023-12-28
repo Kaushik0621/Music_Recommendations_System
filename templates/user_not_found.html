@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Not Found</title>
+
+    <style>
+        html {
+            height: 100%;
+          }
+          body {
+            margin:0;
+            padding:0;
+            font-family: sans-serif;
+            background:linear-gradient(to right, #36454f,  #101314);
+          }
+          
+          img {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 100px;
+            width: 333px;
+            margin: 20px; /* Adjust margin as needed */
+            opacity: 0.1;
+        }
+        
+          h1{
+            font-size: 40px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 15px;
+          }
+
+          h2{
+            font-size: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 15px;
+          }
+          
+          a{
+            font-size: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 15px;
+          }
+          
+         
+          
+      
+    </style>
+</head>
+<body>
+    <h1>User Not Found</h1><br/><br/>
+    <h2>The specified user ID:<strong>"{{user_id}}"</strong> was not found. Please check the entered user ID.</h2>
+   
+        <center>
+    <a href="{{ url_for('index') }}">Go back to the home page</a></center>
+
+    <img src="{{ url_for('static', filename='UoA_Primary_Logo_REVERSE_2018.png') }}" alt="Image">
+</body>
+</html>

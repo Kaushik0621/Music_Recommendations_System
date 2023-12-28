@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation System - Result (JSON Contents)</title>
+    <!-- Add your stylesheets and scripts here if needed -->
+</head>
+<body>
+    <h1>Recommendations for User ID {{ user_id }}:</h1>
+
+    <h2>Songs of different era</h2>
+    <ul>
+        {% for content in recommendations.json_contents %}
+            <li>
+                <strong> {# Extract decade information from file_name #}
+                    {% set decade = content.file_name.split('_')[0] %}
+                    {% set formatted_decade = decade[:-1] + "'s" %}
+        
+                    {# Display formatted decade #}
+                    <p>{{ formatted_decade }} Top Songs</p></strong> <br>
+                
+                <ul>
+                    {% for song_data in content.data %}
+                        <li>
+                            {{ song_data.title }} by {{ song_data.artist_name }}
+                           
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Add any additional content or scripts here -->
+
+</body>
+</html>
